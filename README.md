@@ -1,4 +1,5 @@
-"# api-java-spring" 
-"# EstudoSpring2022" 
-"# EstudoSpring2022" 
-"# EstudoSpring2022" 
+# 1 - Execução em desenvolvimento
+
+LINUX: ```mvn spring-boot:run -Dspring-boot.run.profiles=dev```
+
+WIN: ```mvnw spring-boot:run -Dspring-boot.run.profiles=dev```

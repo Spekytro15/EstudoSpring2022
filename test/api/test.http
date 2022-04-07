@@ -2,20 +2,44 @@
 @HOSTAPI=http://localhost:3000
 
 ### 
-GET {{HOSTAPI}}/bor/bordispositivo HTTP/1.1
+GET {{HOSTAPI}}/crud-on  HTTP/1.1
 Content-Type: application/json
 Authorization: Basic YWRtaW46MTIz
 x-tenancy: f3996813-838e-49af-9649-8dc44e24bc75
 
 ### 
-POST {{HOSTAPI}}/bor/bordispositivo HTTP/1.1
+GET {{HOSTAPI}}/crud-on/331839d5-2ba8-4ca5-a47f-73ad6ed5c9fb  HTTP/1.1
+Content-Type: application/json
+Authorization: Basic YWRtaW46MTIz
+x-tenancy: f3996813-838e-49af-9649-8dc44e24bc75
+### 
+PUT {{HOSTAPI}}/crud-on/9b52d7cd-0492-4825-bf3a-88f6048ec437 HTTP/1.1
 Content-Type: application/json
 Authorization: Basic YWRtaW46MTIz
 
 {
-    "nome":"DV01xxxx",
-    "numeroSerie":"123455g",
-    "tipo":"E",
-    "ativo":"S",
-    "sysUnit":{"id":"f3996813-838e-49af-9649-8dc44e24bc75"}
+   "jt_codigo":"6",
+	"jt_nome":"Eduardo",
+   "jt_data_nascimento":"15/05/1980",
+   "ativo":true
+   
+	
+}
+###
+DELETE {{HOSTAPI}}/crud-on/8f4df6fe-8d21-44ff-93fe-b556e6dc97aa HTTP/1.1
+Content-Type: application/json
+Authorization: Basic YWRtaW46MTIz
+x-tenancy: f3996813-838e-49af-9649-8dc44e24bc75
+###
+POST {{HOSTAPI}}/crud-on/ HTTP/1.1
+Content-Type: application/json
+Authorization: Basic YWRtaW46MTIz
+
+{
+   "jt_codigo":"5",
+	"jt_nome":"teste",
+   "jt_data_nascimento":"15/07/2001",
+   "ativo":true
+   
+	
 }
