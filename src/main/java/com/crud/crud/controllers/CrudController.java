@@ -10,6 +10,7 @@ import com.crud.crud.models.CrudModel;
 import com.crud.crud.services.CrudService;
 
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -20,22 +21,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(origins ="*", maxAge = 3600)
-
-
 @RequestMapping("/crud-on") //rota post
 public class CrudController {
     
-    final CrudService crudService;
+    @Autowired
+    private CrudService crudService;
 
-    public CrudController (CrudService crudService) {
-    this.crudService = crudService;
-    }
+    private CrudModel crudModel;
+  
     @PostMapping
     public ResponseEntity<Object> saveCrud(@RequestBody @Valid CrudDto crudDto){
-
-        var CrudModel = new CrudModel();
-        BeanUtils.copyProperties(crudDto, CrudModel);
-        return ResponseEntity.status(HttpStatus.CREATED).body(CrudService.save(CrudModel));
+        crudModel = new CrudModel();
+        BeanUtils.copyProperties(crudDto, crudModel);
+        return ResponseEntity.status(HttpStatus.CREATED).body(this.crudService.save(crudModel));
     }
        
     
