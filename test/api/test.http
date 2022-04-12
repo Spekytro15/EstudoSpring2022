@@ -36,7 +36,7 @@ Content-Type: application/json
 Authorization: Basic YWRtaW46MTIz
 
 {
-   "jt_codigo":"5",
+   "jt_codigo":"63",
 	"jt_nome":"teste",
    "jt_data_nascimento":"15/07/2001",
    "ativo":true
