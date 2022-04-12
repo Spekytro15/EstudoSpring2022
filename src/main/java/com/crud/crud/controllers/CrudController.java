@@ -84,7 +84,7 @@ public class CrudController {
 }
     
 //update
-@PutMapping("/{id}")
+@PostMapping("/{id}")
 public ResponseEntity<Object>DeleteOneCrud(@PathVariable(value="id") UUID id, //Pega o id
                                            @RequestBody @Valid CrudDto crudDto){// Valida ve se esta tudo ok deacordo com Dto
 
